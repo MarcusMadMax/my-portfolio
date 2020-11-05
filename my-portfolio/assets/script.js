@@ -7,10 +7,10 @@ $(function(){
         easing: 'easeInOutQuad',
         autoplay: false,
       });
-      document.querySelector('button').onclick = anime1 //onclick event
-    //   $('.circle').on('click',function(){
-    //       anime1.play()
-      
+      // document.querySelector('.button').onclick = anime1 //onclick event
+      $('button').on('click',function(){
+          anime1.play()
+      })
 
     //   anime({
     //     targets: ['.svg-attributes-demo polygon', 'feTurbulence', 'feDisplacementMap'],
