@@ -13,8 +13,8 @@
 }
 
 .wrapper .main button {
-  width: 2em;
-  height: 1em;
+  padding: 1em;
+  border-radius: .5em;
   background: blueviolet;
 }
 /*# sourceMappingURL=style.css.map */
