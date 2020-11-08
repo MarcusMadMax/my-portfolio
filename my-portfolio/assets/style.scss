@@ -1,25 +1,183 @@
-*{
+//colors
+$dark-grey: #35373d;
+$highlight-color: #23f6f5;
+$neutral-color: #fff;
+
+@font-face {
+    font-family: Anurati;
+    src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
+}
+
+* {
     margin: 0;
     padding: 0;
     border: none;
     list-style-type: none;
 }
 
-.wrapper{
+.wrapper {
+    position: relative;
 
-    .main{
+    .nav-wrapper{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
 
-        .circle{
+        .bars {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 4em;
+            height: 4em;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 3em;
+            height: 0.25em;
+            background-color: $highlight-color;
+            border-radius: 15px;
+            transition: 0.5s;
+        }
+
+        .change .bar1 {
+            transform: rotate(45deg) translate(.9em, 1em);
+            color: $neutral-color;
+        }
+
+        .change .bar2 {
+            opacity: 0;
+            transform: scaleX(0);
+            color: $neutral-color;
+        }
+
+        .change .bar3 {
+            transform: rotate(-45deg) translate(.9em, -1em);
+            color: $neutral-color;
+        }
+
+        .opacity {
+            opacity: 1;
+            height: 100vh;
+        }
+
+        nav {
+            position: absolute;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            background: rgba($color: $neutral-color, $alpha: 0.25);
+            transition: 0.9s;
+
+            ul {
+                position: absolute;
+                text-align: right;
+
+                li {
+                    position: relative;
+                    font-family: Anurati;
+                    font-weight: 400;
+                    font-size: 2em;
+                    line-height: 2.5em;
+                    right: 200px;
+                    opacity: 0;
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: $highlight-color;
+                }
+            }
+        }
+    }
+
+    .section1 {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        // overflow: hidden;
+        background-image: url("/assets/images/annie-spratt-6a3nqQ1YwBw-unsplash_LS.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        section {
             position: relative;
-            width: 10em;
-            height: 10em;
-            background: aqua;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+
+            .logo {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    width: 30vw;
+                    height: auto;
+                }
+            }
+
+            .portfolio {
+                position: absolute;
+                bottom: 2em;
+                left: 50%;
+                transform: translateX(-50%);
+
+                h1 {
+                    font-family: Anurati;
+                    color: $dark-grey;
+                    font-size: 2em;
+                    letter-spacing: 0.25em;
+                }
+            }
+        }
+    }
+
+    .section2{
+        font-family: Anurati;
+        height: 100vh;
+        overflow: hidden;
+
+        .left-column{
+            display: flex;
+            flex-direction: column;
+            
+            h2{
+                color: $dark-grey;
+                font-size: 3em;
+            }
         }
 
-        button{
-            padding: 1em;
-            border-radius: .5em;
-            background: blueviolet;
+        .right-column{
+            flex: 0 0 50%;
+            height: 100vh;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
         }
+    }
+
+    .section3{
+        height: 100vh;
+        width: 100vw;
+        background: green;
     }
 }

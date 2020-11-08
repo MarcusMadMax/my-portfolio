@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Anurati;
+  src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,16 +10,208 @@
   list-style-type: none;
 }
 
-.wrapper .main .circle {
+.wrapper {
   position: relative;
-  width: 10em;
-  height: 10em;
-  background: aqua;
 }
 
-.wrapper .main button {
-  padding: 1em;
-  border-radius: .5em;
-  background: blueviolet;
+.wrapper .nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.wrapper .nav-wrapper .bars {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4em;
+  height: 4em;
+  cursor: pointer;
+}
+
+.wrapper .nav-wrapper .bar1,
+.wrapper .nav-wrapper .bar2,
+.wrapper .nav-wrapper .bar3 {
+  width: 3em;
+  height: 0.25em;
+  background-color: #23f6f5;
+  border-radius: 15px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.wrapper .nav-wrapper .change .bar1 {
+  -webkit-transform: rotate(45deg) translate(0.9em, 1em);
+          transform: rotate(45deg) translate(0.9em, 1em);
+  color: #fff;
+}
+
+.wrapper .nav-wrapper .change .bar2 {
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  color: #fff;
+}
+
+.wrapper .nav-wrapper .change .bar3 {
+  -webkit-transform: rotate(-45deg) translate(0.9em, -1em);
+          transform: rotate(-45deg) translate(0.9em, -1em);
+  color: #fff;
+}
+
+.wrapper .nav-wrapper .opacity {
+  opacity: 1;
+  height: 100vh;
+}
+
+.wrapper .nav-wrapper nav {
+  position: absolute;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+
+.wrapper .nav-wrapper nav ul {
+  position: absolute;
+  text-align: right;
+}
+
+.wrapper .nav-wrapper nav ul li {
+  position: relative;
+  font-family: Anurati;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 2.5em;
+  right: 200px;
+  opacity: 0;
+}
+
+.wrapper .nav-wrapper nav ul a {
+  display: block;
+  text-decoration: none;
+  color: #23f6f5;
+}
+
+.wrapper .section1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/assets/images/annie-spratt-6a3nqQ1YwBw-unsplash_LS.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper .section1 section {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.wrapper .section1 section .logo {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .section1 section .logo img {
+  width: 30vw;
+  height: auto;
+}
+
+.wrapper .section1 section .portfolio {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.wrapper .section1 section .portfolio h1 {
+  font-family: Anurati;
+  color: #35373d;
+  font-size: 2em;
+  letter-spacing: 0.25em;
+}
+
+.wrapper .section2 {
+  font-family: Anurati;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper .section2 .left-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .section2 .left-column h2 {
+  color: #35373d;
+  font-size: 3em;
+}
+
+.wrapper .section2 .right-column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  height: 100vh;
+}
+
+.wrapper .section2 .right-column img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapper .section3 {
+  height: 100vh;
+  width: 100vw;
+  background: green;
 }
 /*# sourceMappingURL=style.css.map */
