@@ -64,10 +64,12 @@ barsBtn.addEventListener('click', () => {
     }
 })
 let linkBtn = document.querySelectorAll('li a')
-console.log(linkBtn)
-linkBtn.addEventListener('click', () => {
 
+for (i = 0; i < linkBtn.length; i++) {
+    let link = linkBtn[i]
+    link.addEventListener('click', () => {
         moveOut.play()
         barsBtn.classList.remove('change')
         menuOpen = false
-})
+    })
+}

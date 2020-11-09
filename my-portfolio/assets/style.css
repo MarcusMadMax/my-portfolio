@@ -1,6 +1,6 @@
 @font-face {
   font-family: Anurati;
-  src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
+  src: url("/fonts/anurati_font/Anurati-Regular.otf");
 }
 
 * {
@@ -123,7 +123,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/images/annie-spratt-6a3nqQ1YwBw-unsplash_LS.webp");
+  background-image: url("/assets/annie-spratt-6a3nqQ1YwBw-unsplash.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -213,5 +213,11 @@
   height: 100vh;
   width: 100vw;
   background: green;
+}
+
+.wrapper .section4 {
+  height: 100vh;
+  width: 100vw;
+  background: orange;
 }
 /*# sourceMappingURL=style.css.map */
