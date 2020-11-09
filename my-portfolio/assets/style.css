@@ -1,6 +1,12 @@
 @font-face {
   font-family: Anurati;
-  src: url("/fonts/anurati_font/Anurati-Regular.otf");
+  src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-transition-duration: 5500ms;
+          transition-duration: 5500ms;
 }
 
 * {
@@ -123,7 +129,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("/assets/annie-spratt-6a3nqQ1YwBw-unsplash.webp");
+  background-image: url("/assets/images/annie-spratt-6a3nqQ1YwBw-unsplash.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -219,5 +225,24 @@
   height: 100vh;
   width: 100vw;
   background: orange;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 100;
+  background-color: #35373d;
+  color: #23f6f5;
+  padding: .5em;
+  border-radius: .1em;
+}
+
+.back-to-top .fas {
+  color: #23f6f5;
+}
+
+.back-to-top span {
+  font-family: 'Roboto', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
