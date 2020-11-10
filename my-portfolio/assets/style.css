@@ -16,6 +16,7 @@ html {
 
 .wrapper {
   position: relative;
+  font-family: Anurati;
 }
 
 .wrapper .nav-wrapper {
@@ -216,13 +217,91 @@ html {
 .wrapper .section3 {
   height: 100vh;
   width: 100vw;
-  background: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .section3 .logo {
+  width: 100%;
+}
+
+.wrapper .section3 .logo img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper .section3 .text {
+  width: 80%;
+  margin: 0 auto 4em auto;
+}
+
+.wrapper .section3 .text p {
+  font-family: roboto;
+  font-weight: 100;
+  text-align: justify;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  margin-bottom: .6em;
+}
+
+.wrapper .section3 .text p a {
+  color: #23f6f5;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .wrapper .section4 {
   height: 100vh;
   width: 100vw;
-  background: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .section4 .logo {
+  width: 100%;
+}
+
+.wrapper .section4 .logo img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.wrapper .section4 .text {
+  width: 80%;
+  margin: 0 auto 4em auto;
+}
+
+.wrapper .section4 .text p {
+  font-family: roboto;
+  font-weight: 100;
+  text-align: justify;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  margin-bottom: .6em;
+}
+
+.wrapper .section4 .text p a {
+  color: #23f6f5;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .back-to-top {

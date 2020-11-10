@@ -3,6 +3,44 @@ $dark-grey: #35373d;
 $highlight-color: #23f6f5;
 $neutral-color: #fff;
 
+@mixin article{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .logo{
+        width: 100%;
+
+        img{
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .text {
+        width: 80%;
+        margin: 0 auto 4em auto;
+
+        p{
+            font-family: roboto;
+            font-weight: 100;
+            text-align: justify;
+            font-size: 1.25em;
+            line-height: 1.25em;
+            margin-bottom: .6em;
+
+            a{
+                color: #23f6f5;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 @font-face {
     font-family: Anurati;
     src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
@@ -21,6 +59,7 @@ html{
 
 .wrapper {
     position: relative;
+    font-family: Anurati;
 
     // Navigation Start
     .nav-wrapper{
@@ -190,18 +229,14 @@ html{
 
     //About Section Start
     .section3{
-        height: 100vh;
-        width: 100vw;
-        background: green;
+        @include article;
     }
     //About Section End
 
 
     //Contact Section Start
     .section4{
-        height: 100vh;
-        width: 100vw;
-        background: orange;
+        @include article;
     }
     //Contact Section End
 }

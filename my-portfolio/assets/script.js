@@ -100,7 +100,7 @@ window.onscroll = function (e) {
     var winHeight = window.innerHeight;
     var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight
     var scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100)
-    document.querySelector('span').innerHTML = Math.round(scrollPercent) + '%'
+    document.querySelector('.back-to-top span').innerHTML = Math.round(scrollPercent) + '%'
 }
 
 // document.querySelector('.hello').scrollIntoView({ 
