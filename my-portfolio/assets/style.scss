@@ -3,68 +3,64 @@ $dark-grey: #35373d;
 $highlight-color: #23f6f5;
 $neutral-color: #fff;
 
-@mixin article{
+@mixin article {
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    .logo-face{
+    .logo-face {
         position: relative;
         width: 100%;
         height: 14em;
 
-        .logo-overlay{
+        .logo-overlay {
             position: absolute;
             z-index: 5;
             width: 100%;
             pointer-events: none;
-            border: 1px solid green;
 
-            img{
+            img {
                 width: 60%;
                 display: block;
                 margin: 0 auto;
-                border: 1px solid red;
             }
         }
 
-        .me-face{
+        .me-face {
             position: absolute;
             width: 100%;
             box-sizing: border-box;
 
-            img{
+            img {
                 width: 60%;
                 display: block;
                 margin: 0 auto;
-                filter: grayscale(1);                
+                filter: grayscale(1);
                 transform: scale(1);
                 transition: 15s transform linear;
-    
-                &:hover{
-                    transform: scale(1.5); 
+
+                &:hover {
+                    transform: scale(1.5);
                 }
             }
         }
     }
 
-
-
     .text {
         width: 80%;
         margin: 0 auto 4em auto;
 
-        p{
+        p {
             font-family: roboto;
             font-weight: 100;
             text-align: justify;
             font-size: 1.25em;
             line-height: 1.25em;
-            margin-bottom: .6em;
+            margin-bottom: 0.6em;
 
-            a{
+            a {
                 color: $highlight-color;
                 font-weight: 700;
                 text-decoration: none;
@@ -78,7 +74,7 @@ $neutral-color: #fff;
     src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -89,12 +85,22 @@ html{
     list-style-type: none;
 }
 
+//General
+h1 {
+    position: relative;
+    z-index: 20;
+    color: $dark-grey;
+    font-size: 2em;
+    letter-spacing: 0.25em;
+    text-shadow: 2px 2px 2px #23f6f5;
+}
+
 .wrapper {
     position: relative;
     font-family: Anurati;
 
     // Navigation Start
-    .nav-wrapper{
+    .nav-wrapper {
         position: fixed;
         top: 0;
         left: 0;
@@ -125,7 +131,7 @@ html{
         }
 
         .change .bar1 {
-            transform: rotate(45deg) translate(.9em, 1em);
+            transform: rotate(45deg) translate(0.9em, 1em);
             color: $neutral-color;
         }
 
@@ -136,7 +142,7 @@ html{
         }
 
         .change .bar3 {
-            transform: rotate(-45deg) translate(.9em, -1em);
+            transform: rotate(-45deg) translate(0.9em, -1em);
             color: $neutral-color;
         }
 
@@ -153,7 +159,7 @@ html{
             justify-content: center;
             height: 100vh;
             width: 100vw;
-            background: rgba($color: $neutral-color, $alpha: 0.25);
+            background: rgba($color: $neutral-color, $alpha: 0.96);
             transition: 0.9s;
 
             ul {
@@ -180,13 +186,11 @@ html{
     }
     //Navigation End
 
-
     //Home Section Start
     .section1 {
         position: relative;
         width: 100vw;
         height: 100vh;
-        // overflow: hidden;
         background-image: url("/assets/images/annie-spratt-6a3nqQ1YwBw-unsplash.webp");
         background-repeat: no-repeat;
         background-size: cover;
@@ -199,7 +203,8 @@ html{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100vh;
+            height: 100%;
+            overflow: hidden;
 
             .logo {
                 height: 100vh;
@@ -214,58 +219,85 @@ html{
 
             .portfolio {
                 position: absolute;
-                bottom: 2em;
-                left: 50%;
-                transform: translateX(-50%);
+                left: 0;
+                bottom: 7em;
+                animation: 1.5s ease-out 0s 1 slideInFromBottom;
 
                 h1 {
-                    font-family: Anurati;
                     color: $dark-grey;
-                    font-size: 2em;
-                    letter-spacing: 0.25em;
+                    font-size: 2.5em;
+                    text-align: center;
+                    padding-left: 0.7em;
+                }
+            }
+
+            @keyframes slideInFromBottom {
+                0% {
+                    transform: translatey(19em);
+                }
+                100% {
+                    transform: translatey(0);
                 }
             }
         }
     }
     //Home Section End
 
-
     //Work Section Sart
-    .section2{
+    .section2 {
         font-family: Anurati;
         height: 100vh;
-        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
 
-        .left-column{
-            display: flex;
-            flex-direction: column;
-            
-            h2{
-                color: $dark-grey;
-                font-size: 3em;
+        .left-column {
+            flex: 0 0 10%;
+            border: 1px solid green;
+            h1 {
+                padding: .1em 0 2em .1em;
             }
         }
 
-        .right-column{
-            flex: 0 0 50%;
-            height: 100vh;
+        .right-column {
+            display: flex;
+            flex-direction: row;
+            flex: 0 0 87%;
+            border: 1px solid red;
+            overflow: scroll;
 
-            img{
-                width: 100%;
-                height: auto;
+            .work1{
+                border: 3px solid green;
+                width: 100vw;
+                overflow: hidden;
+
+                img {
+                    height: 120%;
+                    display: block;
+                    margin: 0 auto;
+                    filter: grayscale(1);
+                    transform: scale(1);
+                    transition: 15s transform linear;
+
+                    &:hover {
+                        transform: scale(1.3);
+                        
+                    }
+                }
             }
         }
     }
     //Work Section End
 
-
     //About Section Start
-    .section3{
+    .section3 {
         @include article;
 
-        .logo-face{
-
-            .me-face{
+        h1 {
+            padding: .1em 0 0 .1em;
+        }
+        .logo-face {
+            .me-face {
                 clip-path: inset(2.4em 7em 2.98em 4.75em);
                 padding: 1em 0em 0 0;
                 box-sizing: border-box;
@@ -274,40 +306,46 @@ html{
     }
     //About Section End
 
-
     //Contact Section Start
-    .section4{
-        color: white;
-        background: repeating-linear-gradient(
-          -55deg,
-          #222,
-          #222 10px,
-          #333 10px,
-          #333 20px
-        );
+    .section4 {
+        background: linear-gradient(270deg, #5f6673, #292d3e);
+        background-size: 600% 600%;
+        animation: gradient 15s ease infinite;
 
-        h1{
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
             color: $neutral-color;
-            text-shadow: 2px 2px 2px #23f6f5;
+            margin: .1em 0 0 .1em;
         }
         @include article;
 
-        .logo-face{
-
-            .me-face{
-                clip-path: inset(2.4em 7em 1.7em 4.65em);
+        .logo-face {
+            .me-face {
+                clip-path: inset(2.4em 7em 1.7em 4.73em);
                 padding: 1em 2em 0 0;
             }
         }
 
-        .text{
+        .text {
             padding-bottom: 5em;
             box-sizing: border-box;
 
-            p{
+            p {
                 color: $neutral-color;
+                letter-spacing: 0.15em;
 
-                a{
+                a {
                     display: block;
                     text-align: center;
                 }
@@ -318,21 +356,21 @@ html{
 }
 
 //Back To Top
-.back-to-top{
-        position: fixed;
-        bottom: 1em;
-        right: 1em;
-        z-index: 100;
+.back-to-top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 100;
+    color: #23f6f5;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: $dark-grey;
+
+    .fas {
         color: #23f6f5;
-        padding: .5em;
-        border-radius: .5em;
-        background-color: $dark-grey;
+    }
 
-        .fas{
-            color: #23f6f5;
-        }
-
-        span{
-            font-family: 'Roboto', sans-serif;
-        }
+    span {
+        font-family: "Roboto", sans-serif;
+    }
 }

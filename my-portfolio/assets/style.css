@@ -14,6 +14,15 @@ html {
   list-style-type: none;
 }
 
+h1 {
+  position: relative;
+  z-index: 20;
+  color: #35373d;
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  text-shadow: 2px 2px 2px #23f6f5;
+}
+
 .wrapper {
   position: relative;
   font-family: Anurati;
@@ -98,7 +107,7 @@ html {
           justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.96);
   -webkit-transition: 0.9s;
   transition: 0.9s;
 }
@@ -148,7 +157,8 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .wrapper .section1 section .logo {
@@ -168,26 +178,44 @@ html {
 
 .wrapper .section1 section .portfolio {
   position: absolute;
-  bottom: 2em;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: 0;
+  bottom: 7em;
+  -webkit-animation: 1.5s ease-out 0s 1 slideInFromBottom;
+          animation: 1.5s ease-out 0s 1 slideInFromBottom;
 }
 
 .wrapper .section1 section .portfolio h1 {
-  font-family: Anurati;
   color: #35373d;
-  font-size: 2em;
-  letter-spacing: 0.25em;
+  font-size: 2.5em;
+  text-align: center;
+  padding-left: 0.7em;
+}
+
+@-webkit-keyframes slideInFromBottom {
+  0% {
+    -webkit-transform: translatey(19em);
+            transform: translatey(19em);
+  }
+  100% {
+    -webkit-transform: translatey(0);
+            transform: translatey(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    -webkit-transform: translatey(19em);
+            transform: translatey(19em);
+  }
+  100% {
+    -webkit-transform: translatey(0);
+            transform: translatey(0);
+  }
 }
 
 .wrapper .section2 {
   font-family: Anurati;
   height: 100vh;
-  overflow: hidden;
-}
-
-.wrapper .section2 .left-column {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,23 +223,58 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-y: scroll;
 }
 
-.wrapper .section2 .left-column h2 {
-  color: #35373d;
-  font-size: 3em;
+.wrapper .section2 .left-column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  border: 1px solid green;
+}
+
+.wrapper .section2 .left-column h1 {
+  padding: .1em 0 2em .1em;
 }
 
 .wrapper .section2 .right-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
-  height: 100vh;
+      -ms-flex: 0 0 87%;
+          flex: 0 0 87%;
+  border: 1px solid red;
+  overflow: scroll;
 }
 
-.wrapper .section2 .right-column img {
-  width: 100%;
-  height: auto;
+.wrapper .section2 .right-column .work1 {
+  border: 3px solid green;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.wrapper .section2 .right-column .work1 img {
+  height: 120%;
+  display: block;
+  margin: 0 auto;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 15s -webkit-transform linear;
+  transition: 15s -webkit-transform linear;
+  transition: 15s transform linear;
+  transition: 15s transform linear, 15s -webkit-transform linear;
+}
+
+.wrapper .section2 .right-column .work1 img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .wrapper .section3 {
@@ -240,14 +303,12 @@ html {
   z-index: 5;
   width: 100%;
   pointer-events: none;
-  border: 1px solid green;
 }
 
 .wrapper .section3 .logo-face .logo-overlay img {
   width: 60%;
   display: block;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 .wrapper .section3 .logo-face .me-face {
@@ -287,13 +348,17 @@ html {
   text-align: justify;
   font-size: 1.25em;
   line-height: 1.25em;
-  margin-bottom: .6em;
+  margin-bottom: 0.6em;
 }
 
 .wrapper .section3 .text p a {
   color: #23f6f5;
   font-weight: 700;
   text-decoration: none;
+}
+
+.wrapper .section3 h1 {
+  padding: .1em 0 0 .1em;
 }
 
 .wrapper .section3 .logo-face .me-face {
@@ -305,8 +370,11 @@ html {
 }
 
 .wrapper .section4 {
-  color: white;
-  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
+  background: -webkit-gradient(linear, right top, left top, from(#5f6673), to(#292d3e));
+  background: linear-gradient(270deg, #5f6673, #292d3e);
+  background-size: 600% 600%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
   height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -321,9 +389,33 @@ html {
           justify-content: space-between;
 }
 
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .wrapper .section4 h1 {
   color: #fff;
-  text-shadow: 2px 2px 2px #23f6f5;
+  margin: .1em 0 0 .1em;
 }
 
 .wrapper .section4 .logo-face {
@@ -337,14 +429,12 @@ html {
   z-index: 5;
   width: 100%;
   pointer-events: none;
-  border: 1px solid green;
 }
 
 .wrapper .section4 .logo-face .logo-overlay img {
   width: 60%;
   display: block;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 .wrapper .section4 .logo-face .me-face {
@@ -384,7 +474,7 @@ html {
   text-align: justify;
   font-size: 1.25em;
   line-height: 1.25em;
-  margin-bottom: .6em;
+  margin-bottom: 0.6em;
 }
 
 .wrapper .section4 .text p a {
@@ -394,8 +484,8 @@ html {
 }
 
 .wrapper .section4 .logo-face .me-face {
-  -webkit-clip-path: inset(2.4em 7em 1.7em 4.65em);
-          clip-path: inset(2.4em 7em 1.7em 4.65em);
+  -webkit-clip-path: inset(2.4em 7em 1.7em 4.73em);
+          clip-path: inset(2.4em 7em 1.7em 4.73em);
   padding: 1em 2em 0 0;
 }
 
@@ -407,6 +497,7 @@ html {
 
 .wrapper .section4 .text p {
   color: #fff;
+  letter-spacing: 0.15em;
 }
 
 .wrapper .section4 .text p a {
@@ -420,8 +511,8 @@ html {
   right: 1em;
   z-index: 100;
   color: #23f6f5;
-  padding: .5em;
-  border-radius: .5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
   background-color: #35373d;
 }
 
@@ -430,6 +521,6 @@ html {
 }
 
 .back-to-top span {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

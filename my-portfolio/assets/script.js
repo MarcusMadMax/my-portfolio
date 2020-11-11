@@ -1,3 +1,12 @@
+// //Portfolio comes up
+// anime({
+//     targets: '.portfolio h1',
+//     translateY: 50,
+//     duration: 1,
+//     loop: true,
+//     autoplay: true,
+// })
+
 //Scale Navigation Down
 anime({
     targets: '.nav',
