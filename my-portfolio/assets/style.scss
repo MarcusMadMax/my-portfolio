@@ -10,15 +10,47 @@ $neutral-color: #fff;
     flex-direction: column;
     justify-content: space-between;
 
-    .logo{
+    .logo-face{
+        position: relative;
         width: 100%;
+        height: 14em;
 
-        img{
-            width: 60%;
-            display: block;
-            margin: 0 auto;
+        .logo-overlay{
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            pointer-events: none;
+            border: 1px solid green;
+
+            img{
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid red;
+            }
+        }
+
+        .me-face{
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+
+            img{
+                width: 60%;
+                display: block;
+                margin: 0 auto;
+                filter: grayscale(1);                
+                transform: scale(1);
+                transition: 15s transform linear;
+    
+                &:hover{
+                    transform: scale(1.5); 
+                }
+            }
         }
     }
+
+
 
     .text {
         width: 80%;
@@ -33,7 +65,7 @@ $neutral-color: #fff;
             margin-bottom: .6em;
 
             a{
-                color: #23f6f5;
+                color: $highlight-color;
                 font-weight: 700;
                 text-decoration: none;
             }
@@ -230,28 +262,71 @@ html{
     //About Section Start
     .section3{
         @include article;
+
+        .logo-face{
+
+            .me-face{
+                clip-path: inset(2.4em 7em 2.98em 4.75em);
+                padding: 1em 0em 0 0;
+                box-sizing: border-box;
+            }
+        }
     }
     //About Section End
 
 
     //Contact Section Start
     .section4{
+        color: white;
+        background: repeating-linear-gradient(
+          -55deg,
+          #222,
+          #222 10px,
+          #333 10px,
+          #333 20px
+        );
+
+        h1{
+            color: $neutral-color;
+            text-shadow: 2px 2px 2px #23f6f5;
+        }
         @include article;
+
+        .logo-face{
+
+            .me-face{
+                clip-path: inset(2.4em 7em 1.7em 4.65em);
+                padding: 1em 2em 0 0;
+            }
+        }
+
+        .text{
+            padding-bottom: 5em;
+            box-sizing: border-box;
+
+            p{
+                color: $neutral-color;
+
+                a{
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
     }
     //Contact Section End
 }
 
-
-    //Back To Top
-    .back-to-top{
+//Back To Top
+.back-to-top{
         position: fixed;
         bottom: 1em;
         right: 1em;
         z-index: 100;
-        background-color: #35373d;
         color: #23f6f5;
         padding: .5em;
-        border-radius: .1em;
+        border-radius: .5em;
+        background-color: $dark-grey;
 
         .fas{
             color: #23f6f5;
@@ -260,4 +335,4 @@ html{
         span{
             font-family: 'Roboto', sans-serif;
         }
-    }
+}

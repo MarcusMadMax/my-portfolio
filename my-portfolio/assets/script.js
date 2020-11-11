@@ -102,7 +102,3 @@ window.onscroll = function (e) {
     var scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100)
     document.querySelector('.back-to-top span').innerHTML = Math.round(scrollPercent) + '%'
 }
-
-// document.querySelector('.hello').scrollIntoView({ 
-//     behavior: 'smooth' 
-//   })
