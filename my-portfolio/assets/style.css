@@ -26,6 +26,8 @@ h1 {
 .wrapper {
   position: relative;
   font-family: Anurati;
+  /*for tablet - inclusive*/
+  /*for destop - inclusive*/
 }
 
 .wrapper .nav-wrapper {
@@ -214,30 +216,15 @@ h1 {
 }
 
 .wrapper .section2 {
-  font-family: Anurati;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow-y: scroll;
+  border: 2px solid red;
 }
 
-.wrapper .section2 .left-column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 10%;
-          flex: 0 0 10%;
-  border: 1px solid green;
-}
-
-.wrapper .section2 .left-column h1 {
+.wrapper .section2 h1 {
   padding: .1em 0 2em .1em;
 }
 
-.wrapper .section2 .right-column {
+.wrapper .section2 .section-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,30 +232,71 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper .section2 .section-content .section-header {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 87%;
-          flex: 0 0 87%;
-  border: 1px solid red;
-  overflow: scroll;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
 }
 
-.wrapper .section2 .right-column img {
-  height: 100%;
-  display: block;
+.wrapper .section2 .section-content .section-header .paragraph {
+  width: 65vw;
   margin: 0 auto;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: 15s -webkit-transform linear;
-  transition: 15s -webkit-transform linear;
-  transition: 15s transform linear;
-  transition: 15s transform linear, 15s -webkit-transform linear;
 }
 
-.wrapper .section2 .right-column img:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+.wrapper .section2 .section-content .section-header .paragraph p {
+  font-family: roboto;
+  font-size: 1.5em;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.wrapper .section2 .section-content .carousel {
+  border: 1px solid green;
+}
+
+.wrapper .section2 .section-content .carousel .carousel-cell {
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-style: inset;
+}
+
+.wrapper .section2 .section-content .carousel .carousel-cell img {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+}
+
+@media only screen and (min-width: 55em) {
+  .wrapper .section2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100vw;
+    overflow-y: scroll;
+  }
+  .wrapper .left-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .wrapper .right-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
 }
 
 .wrapper .section3 {
@@ -516,5 +544,36 @@ h1 {
 
 .back-to-top span {
   font-family: "Roboto", sans-serif;
+}
+
+.kaihopara {
+  width: 100vw;
+  font-family: Anurati;
+}
+
+.kaihopara header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .1em .1em 2em .1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.kaihopara header h1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+}
+
+.kaihopara header a .far {
+  font-size: 2em;
+  color: #35373d;
 }
 /*# sourceMappingURL=style.css.map */

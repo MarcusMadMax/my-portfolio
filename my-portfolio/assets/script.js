@@ -24,13 +24,13 @@ moveIn
         autoplay: false,
     })
     .add({
-        targets: '.nav',
+        targets: '.nav-wrapper .nav',
         scale: 1,
         borderRadius: ['50%', '0%'],
         easing: 'linear'
     }, 400)
     .add({
-        targets: 'li',
+        targets: '.nav-wrapper .nav li',
         translateX: 300,
         delay: anime.stagger(500),
         opacity: 1,
@@ -80,6 +80,46 @@ for (i = 0; i < linkBtn.length; i++) {
         menuOpen = false
     })
 }
+
+
+//Work paragraph comes in / up
+$(document).on('scroll', function() {
+  $(".workexperience").lettering();
+});
+
+$(document).ready(function() {
+  animation();
+}, 1000);
+
+function animation() {
+  var title1 = new TimelineMax();
+  title1.staggerFromTo(".workexperience span", 2.5, 
+  {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -280},
+  {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
+}
+
+
+//Carousewith Flickityl
+
+var carousel = document.querySelector('.carousel');
+var flkty = new Flickity( carousel, {
+  imagesLoaded: true,
+  percentPosition: false,
+});
+
+var imgs = carousel.querySelectorAll('.carousel-cell img');
+// get transform property
+var docStyle = document.documentElement.style;
+var transformProp = typeof docStyle.transform == 'string' ?
+  'transform' : 'WebkitTransform';
+
+flkty.on( 'scroll', function() {
+  flkty.slides.forEach( function( slide, i ) {
+    var img = imgs[i];
+    var x = ( slide.target + flkty.x ) * -1/3;
+    img.style[ transformProp ] = 'translateX(' + x  + 'px)';
+  });
+});
 
 
 //Back to top

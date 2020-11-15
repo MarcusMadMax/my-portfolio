@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <title>Marcus Zillner Front End Developer</title>
 </head>
@@ -32,7 +33,7 @@
         </div>
 
         <!------------- HOME SECTION START ------------->
-        <div class="section1" id="home">
+        <section class="section1" id="home">
             <section>
                 <div class="logo">
                     <img src="assets/images/Logo_NEW.svg" alt="">
@@ -41,24 +42,32 @@
                     <h1>PORTFOLIO</h1>
                 </div>
             </section>
-        </div>
+        </section>
 
         <!------------- WORK SECTION START ------------->
-        <div class="section2" id="work">
-            <div class="left-column">
-                <h1>WORK</h1>
-                <p></p>
+        <section class="section2" id="work">
+            <h1>WORK</h1>
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="paragraph">
+                        <p>
+                            <span class="workexperience">My work experience comes primaraly form projects we did at
+                                school.</span>
+                            <span class="workexperience">Please scroll to see more.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-cell"><a href="kaihopara.html"><img
+                                src="assets/images/work-samples/kaihopara1.png" alt=""></a></div>
+                    <div class="carousel-cell"><img src="assets/images/work-samples/kaihopara2.png" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/images/work-samples/kaihopara3.png" alt=""></div>
+                </div>
             </div>
-            <div class="right-column">
-                <img src="assets/images/work-samples/kaihopara1.png" alt="Lux">
-                <img src="assets/images/work-samples/share-me.png" alt="Waves">
-                <img src="assets/images/sample3.jpg" alt="Mountains">
-                <img src="assets/images/sample4.jpg" alt="Mountain lake">
-            </div>
-        </div>
+        </section>
 
         <!------------- ABOUT SECTION START ------------->
-        <div class="section3" id="about">
+        <section class="section3" id="about">
             <h1>ABOUT</h1>
             <div class="logo-face">
                 <div class="logo-overlay">
@@ -79,10 +88,10 @@
                 </p>
                 <p>If you would like to <a href="#contact">find out more</a></p>
             </div>
-        </div>
+        </section>
 
         <!------------- CONTACT SECTION START ------------->
-        <div class="section4" id="contact">
+        <section class="section4" id="contact">
             <h1>CONTACT<br>ME</h1>
             <div class="logo-face">
                 <div class="logo-overlay">
@@ -100,15 +109,24 @@
                 </p>
                 <p>I am open to freelance projets, contract or full time employment.</p>
             </div>
-        </div>
+        </section>
     </div>
 
+    <!------------- FOOTER SECTION START ------------->
+    <footer>
+
+    </footer>
+
+    <!------------- BACK TO TOP SECTION START ------------->
     <div class="back-to-top">
         <i class="fas fa-angle-up"></i>
         <span></span>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="assets/jquery.lettering.js"></script>
     <script src="assets/anime.min.js"></script>
     <script src="assets/script.js"></script>
 </body>
