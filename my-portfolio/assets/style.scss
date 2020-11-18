@@ -245,50 +245,123 @@ h1 {
 
     //Work Section Sart
     .section2 {
-        height: 100vh;
-        border: 2px solid red;
+        position: relative;
+        display: flex;
+        flex-direction: column;
 
         h1 {
-            padding: .1em 0 2em .1em;
+            padding: .1em 0 0 .1em;
         }
-        .section-content{
+
+        .section-header {
+            position: relative  ;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding-bottom: 3em;
-            box-sizing: border-box;
+            justify-content: center;
 
-            .section-header {
-                flex: 0 0 40%;
 
-                .paragraph{
-                    width: 65vw;
-                    margin: 0 auto;
-
-                    p{
-                        font-family: roboto;
-                        font-size: 1.5em;
-                        font-weight: 100;
-                        text-align: justify;
-                    }
-                }
-            }
-
-            .carousel{
-                border: 1px solid green;
-
-                .carousel-cell{
-                    overflow: hidden;
-                    border: 3px solid $neutral-color;
-                    border-style: inset;
-
-                    img{
-                        display: block;
-                        flex: 0 0 60%;
-                    }
-                }
+            p{
+                font-family: roboto;
+                font-size: 1.5em;
+                font-weight: 100;
+                text-align: justify;
             }
         }
+
+        .work-collection{
+            height: 100%;
+
+            .work{
+                position: relative;
+                height: 100vh;
+                font-family: roboto;
+                border-top: .5em solid $neutral-color;
+
+                    img{
+                        width: 100%;
+                        filter: grayscale(1);
+                    }
+
+                .learn-more{
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 4s;
+
+                    img{
+                        position: relative;
+                        width: 35vw;
+                        display: block;
+                        margin: 0 auto;
+                        background-color: #292d3e;
+                        filter: none;
+                        border-radius: 50%;
+                    }
+
+                    h4{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 1em .25em;
+                        text-transform: uppercase;
+                        font-size: 2.5em;
+                        font-weight: 400;
+                        color: #fff;
+                    }
+                }
+
+               .work-collection-description{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    background-color: rgba($color: #5f6673, $alpha: .9);
+                    transition: linear 1s;
+
+                    h3{
+                        font-size: 3em;
+                        color: $neutral-color;
+                        font-family: Anurati;
+
+                    }
+
+                    p{
+                        width: 70vw;
+                        margin: 0 auto;
+                        color: $neutral-color;
+                        font-size: 1.5em;
+                        line-height: 2em;
+                    }
+
+                    .fas{
+                        font-size: 3em;
+                        position: relative;
+                        z-index: 200;
+                        color: $neutral-color;
+                        width: 100%;
+                        text-align: center;
+                    }
+               }
+            }
+        }
+
+    }
+
+    .see{
+        opacity: 1;
     }
 
     @media only screen and (min-width : 35em) {
@@ -299,22 +372,7 @@ h1 {
     /*for tablet - inclusive*/
     
     @media only screen and (min-width : 55em) {
-        .section2 {
-            display: flex;
-            flex-direction: row;
-            width: 100vw;
-            overflow-y: scroll;
-        }
-
-        .left-column{
-            flex: 0 0 50%;
-        }
-
-        .right-column{
-            flex: 0 0 50%;
-        }
     }
-    
     
     
     /*for destop - inclusive*/

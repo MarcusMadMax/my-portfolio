@@ -93,34 +93,10 @@ $(document).ready(function() {
 
 function animation() {
   var title1 = new TimelineMax();
-  title1.staggerFromTo(".workexperience span", 2.5, 
+  title1.staggerFromTo(".workexperience", 2.5, 
   {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -280},
   {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
 }
-
-
-//Carousewith Flickityl
-
-var carousel = document.querySelector('.carousel');
-var flkty = new Flickity( carousel, {
-  imagesLoaded: true,
-  percentPosition: false,
-});
-
-var imgs = carousel.querySelectorAll('.carousel-cell img');
-// get transform property
-var docStyle = document.documentElement.style;
-var transformProp = typeof docStyle.transform == 'string' ?
-  'transform' : 'WebkitTransform';
-
-flkty.on( 'scroll', function() {
-  flkty.slides.forEach( function( slide, i ) {
-    var img = imgs[i];
-    var x = ( slide.target + flkty.x ) * -1/3;
-    img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-  });
-});
-
 
 //Back to top
 const backToTop = document.querySelector('.back-to-top')
@@ -142,3 +118,45 @@ window.onscroll = function (e) {
     var scrollPercent = Math.min(100 * window.scrollY / contentVisibilityHeight, 100)
     document.querySelector('.back-to-top span').innerHTML = Math.round(scrollPercent) + '%'
 }
+
+
+//Work Collection
+
+    // const show = document.querySelector('.work img')
+    // const workCollection = document.querySelector('.work-collection-description')
+    // show.addEventListener('click', () => {
+    //     if(workCollection.style.opacity === '0'){
+    //         workCollection.classList.add('see')
+    //     }else{
+    //         workCollection.classList.remove('see')
+    //     }
+    // })
+const workCollection = document.querySelector('.work-collection-description')
+const learnMore = document.querySelector('.learn-more')
+const hide = document.querySelector('.fas')
+const show = document.querySelector('.learn-more h4')
+
+function showMe(){
+    if(workCollection.style.zIndex === '-1'){
+        workCollection.style.zIndex = '5'
+        learnMore.style.zIndex = '-1'
+    }else{
+        workCollection.style.zIndex = '-1'
+        learnMore.style.zIndex = '9'
+    }
+}
+
+function closeMe(){
+    if(workCollection.style.zIndex == '5'){
+        workCollection.style.zIndex= '-1'
+        learnMore.style.zIndex = '9'
+    }else{
+        workCollection.style.zIndex = '5'
+        learnMore.style.zIndex = '-1'
+    }
+}
+
+
+show.addEventListener('click', showMe)
+
+hide.addEventListener('click',closeMe )
