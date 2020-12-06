@@ -257,10 +257,6 @@ h1 {
   text-align: justify;
 }
 
-.wrapper .section2 .work-collection {
-  height: 100%;
-}
-
 .wrapper .section2 .work-collection .work {
   position: relative;
   height: 100vh;
@@ -639,5 +635,26 @@ h1 {
 .kaihopara header a .far {
   font-size: 2em;
   color: #35373d;
+}
+
+.cover-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.cover-bottom {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.fill-top {
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: top;
+     object-position: top;
 }
 /*# sourceMappingURL=style.css.map */
