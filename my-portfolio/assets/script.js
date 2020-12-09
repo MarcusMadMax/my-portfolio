@@ -138,7 +138,7 @@ const show = document.querySelector('.learn-more')
 
 function showMe(){
     if(workCollection.style.zIndex === '-1'){
-        workCollection.style.zIndex = '5'
+        workCollection.toggle = '5'
         learnMore.style.zIndex = '-1'
     }else{
         workCollection.style.zIndex = '-1'
@@ -146,15 +146,15 @@ function showMe(){
     }
 }
 
-function closeMe(){
-    if(workCollection.style.zIndex == '5'){
-        workCollection.style.zIndex= '-1'
-        learnMore.style.zIndex = '9'
-    }else{
-        workCollection.style.zIndex = '5'
-        learnMore.style.zIndex = '-1'
-    }
-}
+// function closeMe(){
+//     if(workCollection.style.zIndex == '5'){
+//         workCollection.style.zIndex= '-1'
+//         learnMore.style.zIndex = '9'
+//     }else{
+//         workCollection.style.zIndex = '5'
+//         learnMore.style.zIndex = '-1'
+//     }
+// }
 
 
 show.addEventListener('click', showMe)
