@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+@import "parts/hexagon";
+
+
+.preloader {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	@include flexbox();
+	&.active.hidden {
+		display: none;
+	}
+}
+
+.loading-mask {
+	background-color: $primary-color;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 20%;
+	@include transition(all 0.6s cubic-bezier(0.61, 0, 0.6, 1) 0s);
+
+	&:nth-child(2) {
+		left: 20%;
+		@include transition-delay(0.1s);
+	}
+	&:nth-child(3) {
+		left: 40%;
+		@include transition-delay(0.2s);
+	}
+	&:nth-child(4) {
+		left: 60%;
+		@include transition-delay(0.3s);
+	}
+	&:nth-child(5) {
+		left: 80%;
+		@include transition-delay(0.4s);
+	}
+}
+
+.preloader.active {
+	&.done {
+		z-index: 0;
+	}
+	.loading-mask {
+		width: 0;
+	}
+}
+
+.site-wrapper{
+    border: 2px solid red;
+
+}

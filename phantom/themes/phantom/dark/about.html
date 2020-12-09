@@ -18,9 +18,8 @@
         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="css/themefisher-fonts.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/dark.css">
-        <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+        <link rel="stylesheet" href="scss/main.css">
+        <link rel="stylesheet" href="scss/main.css">
     </head>
 
     <body class="dark">
@@ -31,56 +30,56 @@
             <div class="loading-mask"></div>
             <div class="loading-mask"></div>
             <div class="loading-mask"></div>
-        </div>
-
-        <div class="preview-wrapper">
-            <div class="switcher-head">
-                <span>Style Switcher</span>
-                <div class="switcher-trigger tf-tools"></div>
-            </div>
-
-            <div class="switcher-body">
-                <h4>Choose Color:</h4>
-                <ul class="color-options list-none">
-                    <li class="c0" data-color="color-0" title="Default">Default</li>
-                    <li class="c1" data-color="color-1" title="Red">Red</li>
-                    <li class="c2" data-color="color-2" title="Green">Green</li>
-                    <li class="c3" data-color="color-3" title="Blue">Blue</li>
-                </ul>
-            </div>
-        </div>
-        
+        </div>        
 
         <main class="site-wrapper">
+
+            <div class="nav-wrapper">
+                <div class="bars">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li class="nav-link"><a class="work" href="index.html">Home</a></li>
+    
+                        <li class="nav-link"><a class="about" href="#about">ABOUT</a></li>
+    
+                        <li class="nav-link"><a class="contact" href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+
             <div class="pt-table">
                 <div class="pt-tablecell page-about relative">
-                    <!-- .close -->
-                    <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
-                    <!-- /.close -->
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                            <div class=" col-sm-1 col-md-10 col-lg-offset-2 col-lg-8">
                                 <div class="page-title text-center">
-                                    <h2>About <span class="primary">me</span> <span class="title-bg">Name</span></h2>
-                                    <p>I am working as a professional UI/UX Designer since 2007. Worked in more than 200 live projects and also with more than 120 different clients!</p>
+                                    <h1>About <span class="primary">me</span> <span class="title-bg col-sm-10">Name</span></h1>
+                                    <p>My work experience comes primaraly form projects we did at
+                                        school.</p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-12">
                                 <div class="about-author">
                                     <figure class="author-thumb">
-                                        <img src="img/author.jpg" alt="">
+                                        <img src="img/Marcus-tophat.gif" alt="">
                                     </figure> <!-- /.author-bio -->
-                                    <div class="author-desc">
-                                        <p><b>Date of birth:</b> 29th july, 1984</p>
-                                        <p><b>Language:</b> English, Spanish</p>
-                                        <p><b>Expert in:</b> UI/UX, Web development</p>
-                                        <p><b>Freelance:</b> Available</p>
+                                    <div class="author-desc col-md-10">
+                                        <p><b>Date of birth:</b> <span>25th September, 1972</span></p>
+                                        <p><b>Language:</b> <span>English, German</span></p>
+                                        <p><b>Expert in:</b> <span>UI/UX, Web development</span></p>
+                                        <p><b>Freelance:</b> <span>Available</span></p>
                                     </div>
                                     <!-- /.author-desc -->
                                 </div> <!-- /.about-author -->
-                                <p>I'm a multi-award winning designer that has been specialising in web design for the past three years although I have experience in branding and print.Projects.</p>
+                                <p>As German born Austrian livining in New Zealand
+                                    I have been working half of my life and most of my carer in the creative sector. Recently I took it a step further and entered the digital world. Now I am a graduated Front End Developer with a pasion for moving things on screen, usability,
+                                    functionality and visually appealing designs.</p>
                             </div> <!-- /.col -->
 
                             <div class="col-xs-12 col-md-6">
@@ -93,42 +92,42 @@
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="90%"></div>
+                                        <div class="skill-lavel" data-skill-value="80%"></div>
                                     </div> <!-- /.progress -->
                                     <div class="progress clear">
                                         <div class="skill-name">Illustrator</div>
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="78%"></div>
+                                        <div class="skill-lavel" data-skill-value="95%"></div>
                                     </div> <!-- /.progress -->
                                     <div class="progress clear">
                                         <div class="skill-name">After Fffects</div>
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="85%"></div>
+                                        <div class="skill-lavel" data-skill-value="70%"></div>
                                     </div> <!-- /.progress -->
                                     <div class="progress clear">
                                         <div class="skill-name">HTML5</div>
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="95%"></div>
+                                        <div class="skill-lavel" data-skill-value="50%"></div>
                                     </div> <!-- /.progress -->
                                     <div class="progress clear">
                                         <div class="skill-name">WordPress</div>
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="70%"></div>
+                                        <div class="skill-lavel" data-skill-value="40%"></div>
                                     </div> <!-- /.progress -->
                                     <div class="progress clear">
                                         <div class="skill-name">jQuery</div>
                                         <div class="skill-bar">
                                             <div class="bar"></div>
                                         </div>
-                                        <div class="skill-lavel" data-skill-value="75%"></div>
+                                        <div class="skill-lavel" data-skill-value="40%"></div>
                                     </div> <!-- /.progress -->
                                 </div> <!-- /.skill-wrapper -->
                             </div> <!-- /.col -->
@@ -138,9 +137,7 @@
                     <nav class="page-nav clear">
                         <div class="container">
                             <div class="flex flex-middle space-between">
-                                <span class="prev-page"><a href="welcome.html" class="link">&larr; Prev Page</a></span>
-                                <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
-                                <span class="next-page"><a href="services.html" class="link">Next Page &rarr;</a></span>
+                                <span class="copyright hidden-xs">Copyright &copy; BlackCirkle, All Rights Reserved.</span>
                             </div>
                         </div>
                         <!-- /.page-nav -->
@@ -154,6 +151,7 @@
         JavaScript Libraries
         ================================= -->
         <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="js/vendor/anime.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/isotope.pkgd.min.js"></script>

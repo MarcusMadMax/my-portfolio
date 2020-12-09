@@ -1,0 +1,31 @@
+
+/*------------------------------------------------
+    Home Page
+-------------------------------------------------*/
+.page-home {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+
+    >::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 4em;
+        background: linear-gradient(to bottom, rgba(53, 55, 61, 1) 20%, rgba(53, 55, 61, 0) 100%);
+    }
+
+    .overlay {
+        background-color: rgba($light, 0.93);
+    }
+}
+
+
+/* End of container */
+
+@import "hexagon"
+
+

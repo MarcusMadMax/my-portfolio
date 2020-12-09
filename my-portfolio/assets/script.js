@@ -134,7 +134,7 @@ window.onscroll = function (e) {
 const workCollection = document.querySelector('.work-collection-description')
 const learnMore = document.querySelector('.learn-more')
 const hide = document.querySelector('.fas')
-const show = document.querySelector('.learn-more h4')
+const show = document.querySelector('.learn-more')
 
 function showMe(){
     if(workCollection.style.zIndex === '-1'){
