@@ -3,12 +3,14 @@ $dark-grey: #35373d;
 $highlight-color: #23f6f5;
 $neutral-color: #fff;
 
+@import 'breakpoints';
+
 @mixin article {
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .logo-face {
         position: relative;
@@ -50,7 +52,7 @@ $neutral-color: #fff;
 
     .text {
         width: 80%;
-        margin: 0 auto 4em auto;
+        margin: 0 auto;
 
         p {
             font-family: roboto;
@@ -164,7 +166,10 @@ h1 {
 
             ul {
                 position: absolute;
-                text-align: right;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 li {
                     position: relative;
@@ -172,7 +177,6 @@ h1 {
                     font-weight: 400;
                     font-size: 2em;
                     line-height: 2.5em;
-                    right: 200px;
                     opacity: 0;
                 }
 
@@ -202,7 +206,6 @@ h1 {
             left: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             height: 100%;
             overflow: hidden;
 
@@ -210,17 +213,19 @@ h1 {
                 height: 100vh;
                 display: flex;
                 justify-content: center;
+                align-items: flex-start;
 
                 img {
                     width: 30vw;
                     height: auto;
+                    margin-top: 10em;
                 }
             }
 
             .portfolio {
-                position: absolute;
+                position: relative;
                 left: 0;
-                bottom: 7em;
+                bottom: 17em;
                 animation: 1.5s ease-out 0s 1 slideInFromBottom;
 
                 h1 {
@@ -248,6 +253,7 @@ h1 {
         position: relative;
         display: flex;
         flex-direction: column;
+        width: 100vw;
 
         h1 {
             padding: .1em 0 0 .1em;
@@ -258,7 +264,7 @@ h1 {
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60%;
+            width: 80%;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -269,7 +275,12 @@ h1 {
                 font-family: roboto;
                 font-size: 1.5em;
                 font-weight: 100;
-                text-align: justify;
+                color: $dark-grey;
+
+                span{
+                    color: $highlight-color;
+                    font-size: 1em;
+                }
             }
         }
 
@@ -284,14 +295,13 @@ h1 {
 
                 .work-samples{
                     height: 100%;
-                    width: 100vw;
+                    width: 100%;
                     filter: grayscale(100%) brightness(50%);
                 }
 
                 .learn-more{
                     position: absolute;
                     top: 0;
-                    background-color: rgba($color: $highlight-color, $alpha: .5);
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -299,12 +309,20 @@ h1 {
                     height: 100%;
                     transition: all 4s;
 
-                    .learn-more-top{
+                    .learn-more-content{
                         color: #fff;
                         text-align: center;
-                        margin-bottom: 2em;
+                        width: fit-content;
+                        margin: 0 auto;
+                        padding: 1em;
+                        border-radius: 5px;
                         letter-spacing: .25em;
                         text-transform: uppercase;
+                        background-color: rgba($color: $highlight-color, $alpha: .8);
+                        
+                        h4{
+                            margin-top: 2em;
+                        }
                     }
 
                     .learn-more-bottom{
@@ -332,13 +350,11 @@ h1 {
                     }
                 }
 
-
-
                .work-collection-description{
                     position: absolute;
-                    z-index: 50;
+                    z-index: 150;
                     top: 0;
-                    left: -100%;
+                    left: 0;
                     width: 100%;
                     height: 100%;
                     display: flex;
@@ -351,6 +367,7 @@ h1 {
                         font-size: 3em;
                         color: $neutral-color;
                         font-family: Anurati;
+                        text-transform: uppercase;
 
                     }
 
@@ -359,7 +376,8 @@ h1 {
                         margin: 0 auto;
                         color: $neutral-color;
                         font-size: 1.5em;
-                        line-height: 2em;
+                        font-weight: 100;
+                        line-height: 1.25em;
                     }
 
                     .fas{
@@ -375,6 +393,15 @@ h1 {
                         transform: translateX(100%);
                     }
                }
+
+                @include respond-to('bp2'){
+                    width: 50%;
+                }
+            }
+
+            @include respond-to('bp2'){
+                display: flex;
+                flex-wrap: wrap;
             }
         }
 
@@ -384,22 +411,6 @@ h1 {
         opacity: 1;
     }
 
-    @media only screen and (min-width : 35em) {
-    }
-    
-    
-    
-    /*for tablet - inclusive*/
-    
-    @media only screen and (min-width : 55em) {
-    }
-    
-    
-    /*for destop - inclusive*/
-    
-    @media only screen and (min-width : 75em) {
-    }
-    
     //Work Section End
 
     //About Section Start
@@ -490,30 +501,30 @@ h1 {
 
 
 //Kaihopara
-.kaihopara{
-    width: 100vw;
-    font-family: Anurati;    
+// .kaihopara{
+//     width: 100vw;
+//     font-family: Anurati;    
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: .1em .1em 2em .1em;
-        box-sizing: border-box;
+//     header{
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         padding: .1em .1em 2em .1em;
+//         box-sizing: border-box;
 
-        h1{
-            flex: 0 0 80%;
-        }
+//         h1{
+//             flex: 0 0 80%;
+//         }
 
-        a{
+//         a{
 
-            .far{
-                font-size: 2em;
-                color: $dark-grey;
-            }
-        }
-    }
-}
+//             .far{
+//                 font-size: 2em;
+//                 color: $dark-grey;
+//             }
+//         }
+//     }
+// }
 
 
 

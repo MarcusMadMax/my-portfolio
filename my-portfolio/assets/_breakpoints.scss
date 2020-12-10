@@ -1,0 +1,44 @@
+$breakpoints: (
+  'bp1':  35em,
+  'bp2': 55em,
+  'bp3':  75em
+) !default;
+
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+  }
+
+
+  @mixin respond-to-custom($breakpoint) {
+
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+  }
+
+
+
+
+  /*for mobile - inclusive*/
+  @media only screen and (min-width : 35em) {
+  }
+
+  /*for tablet - inclusive*/
+  @media only screen and (min-width : 55em) {
+  }
+
+  /*for destop - inclusive*/
+  @media only screen and (min-width : 75em) {
+  }

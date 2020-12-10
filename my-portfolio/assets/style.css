@@ -1,3 +1,6 @@
+/*for mobile - inclusive*/
+/*for tablet - inclusive*/
+/*for destop - inclusive*/
 @font-face {
   font-family: Anurati;
   src: url("/assets/fonts/anurati_font/Anurati-Regular.otf");
@@ -26,8 +29,6 @@ h1 {
 .wrapper {
   position: relative;
   font-family: Anurati;
-  /*for tablet - inclusive*/
-  /*for destop - inclusive*/
 }
 
 .wrapper .nav-wrapper {
@@ -116,7 +117,17 @@ h1 {
 
 .wrapper .nav-wrapper nav ul {
   position: absolute;
-  text-align: right;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper .nav-wrapper nav ul li {
@@ -125,7 +136,6 @@ h1 {
   font-weight: 400;
   font-size: 2em;
   line-height: 2.5em;
-  right: 200px;
   opacity: 0;
 }
 
@@ -156,9 +166,6 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: 100%;
   overflow: hidden;
 }
@@ -171,17 +178,21 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .wrapper .section1 section .logo img {
   width: 30vw;
   height: auto;
+  margin-top: 10em;
 }
 
 .wrapper .section1 section .portfolio {
-  position: absolute;
+  position: relative;
   left: 0;
-  bottom: 7em;
+  bottom: 17em;
   -webkit-animation: 1.5s ease-out 0s 1 slideInFromBottom;
           animation: 1.5s ease-out 0s 1 slideInFromBottom;
 }
@@ -224,6 +235,7 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100vw;
 }
 
 .wrapper .section2 h1 {
@@ -236,7 +248,7 @@ h1 {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 60%;
+  width: 80%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,7 +266,12 @@ h1 {
   font-family: roboto;
   font-size: 1.5em;
   font-weight: 100;
-  text-align: justify;
+  color: #35373d;
+}
+
+.wrapper .section2 .section-header p span {
+  color: #23f6f5;
+  font-size: 1em;
 }
 
 .wrapper .section2 .work-collection {
@@ -270,7 +287,7 @@ h1 {
 
 .wrapper .section2 .work-collection .work .work-samples {
   height: 100%;
-  width: 100vw;
+  width: 100%;
   -webkit-filter: grayscale(100%) brightness(50%);
           filter: grayscale(100%) brightness(50%);
 }
@@ -278,7 +295,6 @@ h1 {
 .wrapper .section2 .work-collection .work .learn-more {
   position: absolute;
   top: 0;
-  background-color: rgba(35, 246, 245, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -295,12 +311,22 @@ h1 {
   transition: all 4s;
 }
 
-.wrapper .section2 .work-collection .work .learn-more .learn-more-top {
+.wrapper .section2 .work-collection .work .learn-more .learn-more-content {
   color: #fff;
   text-align: center;
-  margin-bottom: 2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 5px;
   letter-spacing: .25em;
   text-transform: uppercase;
+  background-color: rgba(35, 246, 245, 0.8);
+}
+
+.wrapper .section2 .work-collection .work .learn-more .learn-more-content h4 {
+  margin-top: 2em;
 }
 
 .wrapper .section2 .work-collection .work .learn-more .learn-more-bottom .work-sample-logo {
@@ -328,9 +354,9 @@ h1 {
 
 .wrapper .section2 .work-collection .work .work-collection-description {
   position: absolute;
-  z-index: 50;
+  z-index: 150;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -351,6 +377,7 @@ h1 {
   font-size: 3em;
   color: #fff;
   font-family: Anurati;
+  text-transform: uppercase;
 }
 
 .wrapper .section2 .work-collection .work .work-collection-description p {
@@ -358,7 +385,8 @@ h1 {
   margin: 0 auto;
   color: #fff;
   font-size: 1.5em;
-  line-height: 2em;
+  font-weight: 100;
+  line-height: 1.25em;
 }
 
 .wrapper .section2 .work-collection .work .work-collection-description .fas {
@@ -375,6 +403,22 @@ h1 {
           transform: translateX(100%);
 }
 
+@media (min-width: 55em) {
+  .wrapper .section2 .work-collection .work {
+    width: 50%;
+  }
+}
+
+@media (min-width: 55em) {
+  .wrapper .section2 .work-collection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .wrapper .see {
   opacity: 1;
 }
@@ -389,9 +433,8 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .wrapper .section3 .logo-face {
@@ -441,7 +484,7 @@ h1 {
 
 .wrapper .section3 .text {
   width: 80%;
-  margin: 0 auto 4em auto;
+  margin: 0 auto;
 }
 
 .wrapper .section3 .text p {
@@ -486,9 +529,8 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 @-webkit-keyframes gradient {
@@ -567,7 +609,7 @@ h1 {
 
 .wrapper .section4 .text {
   width: 80%;
-  margin: 0 auto 4em auto;
+  margin: 0 auto;
 }
 
 .wrapper .section4 .text p {
@@ -624,37 +666,6 @@ h1 {
 
 .back-to-top span {
   font-family: "Roboto", sans-serif;
-}
-
-.kaihopara {
-  width: 100vw;
-  font-family: Anurati;
-}
-
-.kaihopara header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: .1em .1em 2em .1em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.kaihopara header h1 {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 80%;
-          flex: 0 0 80%;
-}
-
-.kaihopara header a .far {
-  font-size: 2em;
-  color: #35373d;
 }
 
 .cover-top {

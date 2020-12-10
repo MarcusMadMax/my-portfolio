@@ -24,6 +24,12 @@ moveIn
         autoplay: false,
     })
     .add({
+        targets: '.portfolio',
+        translateY: 190,
+        duration: .1,
+        autoplay: false,
+    }, 0)
+    .add({
         targets: '.nav-wrapper .nav',
         scale: 1,
         borderRadius: ['50%', '0%'],
@@ -31,7 +37,7 @@ moveIn
     }, 400)
     .add({
         targets: '.nav-wrapper .nav li',
-        translateX: 300,
+        translateX: 0,
         delay: anime.stagger(500),
         opacity: 1,
     }, 800)
@@ -52,6 +58,10 @@ moveOut
     })
     .add({
         targets: '.logo',
+        translateY: 0,
+    })
+    .add({
+        targets: '.portfolio',
         translateY: 0,
     })
 
@@ -121,42 +131,38 @@ window.onscroll = function (e) {
 
 
 //Work Collection
+var buttons = document.getElementsByClassName("learn-more");
+var buttonsCount = buttons.length;
+for (var i = 0; i < buttonsCount; i += 1) {
+    buttons[i].addEventListener('click',function(){
 
-    // const show = document.querySelector('.work img')
-    // const workCollection = document.querySelector('.work-collection-description')
-    // show.addEventListener('click', () => {
-    //     if(workCollection.style.opacity === '0'){
-    //         workCollection.classList.add('see')
-    //     }else{
-    //         workCollection.classList.remove('see')
-    //     }
-    // })
-const workCollection = document.querySelector('.work-collection-description')
-const learnMore = document.querySelector('.learn-more')
-const hide = document.querySelector('.fas')
-const show = document.querySelector('.learn-more')
+        var workCollection = this.nextElementSibling;
 
-function showMe(){
-    if(workCollection.style.zIndex === '-1'){
-        workCollection.toggle = '5'
-        learnMore.style.zIndex = '-1'
-    }else{
-        workCollection.style.zIndex = '-1'
-        learnMore.style.zIndex = '9'
-    }
+
+        if(workCollection.style.zIndex === '-1'){
+            workCollection.style.zIndex = '5'
+            this.style.zIndex = '-1'
+        }else{
+            workCollection.style.zIndex = '-1'
+            this.style.zIndex = '9'
+        }
+
+    })
 }
 
-// function closeMe(){
-//     if(workCollection.style.zIndex == '5'){
-//         workCollection.style.zIndex= '-1'
-//         learnMore.style.zIndex = '9'
-//     }else{
-//         workCollection.style.zIndex = '5'
-//         learnMore.style.zIndex = '-1'
-//     }
-// }
+var closeButtons = document.getElementsByClassName("close-icon");
 
+for (var i = 0; i < closeButtons.length; i += 1) {
+    closeButtons[i].addEventListener('click',function(){
 
-show.addEventListener('click', showMe)
+        var workCollection = this.parentNode;
+        if(workCollection.style.zIndex == '5'){
+            workCollection.style.zIndex= '-1'
+            workCollection.previousElementSibling.style.zIndex = '9'
+        }else{
+            workCollection.style.zIndex = '5'
+            workCollection.previousElementSibling.style.zIndex = '-1'
+        }
 
-hide.addEventListener('click',closeMe )
+    })
+}
